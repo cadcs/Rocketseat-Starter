@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>curso</title>
+</head>
+
+<body>
+    <button class="boxbtn" onclick="addbox()">new box</button>
+    
+    <div id="box-container" style="display:flex;max-width: 1400;flex: 1;"></div>
+    
+
+
+    <script>
+        function addbox() {
+            const boxes = document.getElementsByClassName('box').length 
+            if (boxes % 12 == 1) {
+                let row = document.createElement('div')
+                row.style.display = 'flex';
+                row.style.maxWidth = 1400;
+                row.style.flex = 1;
+                let lastrow = document.getElementById('box-container')
+                lastrow.id = 'box-container-full'
+                row.id = 'box-container'
+                document.body.appendChild(row)
+                
+                
+            }
+
+            
+            const box = document.createElement('div')
+            box.className = 'box'
+            box.style.height = 100;
+            box.style.width = 100;
+            box.style.backgroundColor = '#f00'
+            box.onclick = function() {box.style.backgroundColor = getRandomColor()}
+            document.getElementById('box-container').appendChild(box)
+            
+        }
+        function getRandomColor() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        let newColor = getRandomColor(); // #E943F0
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

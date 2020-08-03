@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>curso bao</title>
+    </head>
+    <body>
+        <div id="app">
+            <input id="nome">
+        </div>
+
+
+
+        <script>
+            let LINK = document.createElement('a')
+            
+            LINK.setAttribute('href', 'https://leitor.net')
+
+            let textao = document.createTextNode('acesso ao Leitor.net site de mangás.')
+            LINK.appendChild(textao)
+
+            let contemE = document.querySelector('#app')
+            contemE.appendChild(LINK)
+
+            let inputE = document.getElementById('nome')
+            contemE.removeChild(inputE)
+
+        </script>
+    </body>
+</html>
